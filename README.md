@@ -36,7 +36,14 @@ to construct the similarity index at the county level:
 
 ## 3. Data Analysis
 
-Use the following steps to create the Similarity Index
+The following files clean and analyze the raw datasets extracted from
+the data sources to create the **Similarity Index**.
 
-1.  Run the `data_clean.R` file to clean and merge the raw datasets
-2.  Run the `similarity_index.R` file to construct the similarity index
+- `1.data_clean.R` cleans the raw datasets from the various datasets and
+  merges them together in a `master dataset`.
+- `2.diversity_index.R` creates a Simpson’s Diversity Index at the
+  county level to create an ethnic heterogeneity map.
+- `3.similarity_index.R` assimilates the master dataset and the
+  diversity index to construct the Similarity Index using the Euclidean
+  distance where the reference point for similarity is the county of
+  Philadelphia, PA.
