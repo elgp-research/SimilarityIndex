@@ -43,6 +43,8 @@ README.Rmd
 
 # Ignoring large data files
 CBP2019.CB1900CBP-Data.csv
+Life_Expectancy_CensusTracts_2015_2019.csv
+
 
 # Ignoring .DS_Store files
 .DS_Store
