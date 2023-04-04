@@ -1,7 +1,7 @@
 Similarity Index
 ================
 
-## Overview
+## 1. Overview
 
 The Similarity Index is a multi-dimensional index used to benchmark and
 compare U.S. cities across various metrics that can allow for a deeper
@@ -21,7 +21,7 @@ policymakers and practitioners to identify new solutions implemented in
 geographic areas that resemble Philadelphia across a comprehensive list
 of socioeconomic indicators and are facing similar policy issues.
 
-## Data Sources
+## 2. Data Sources
 
 We used the most recent data available from the following data sources
 to construct the similarity index at the county level:
@@ -33,3 +33,12 @@ to construct the similarity index at the county level:
 - Kaggle (US Crime Data by County)
 - Life Expectancy Data
 - Bureau of Labor Statistics (BLS) used to collect GDP data
+
+## 3. Data Analysis
+
+We used the following code to look up relevant variables from the ACS
+using the tidycensus package
+
+``` r
+#varlist <- load_variables(year = 2019, dataset = "acs1")
+```
