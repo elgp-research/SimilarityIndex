@@ -36,7 +36,7 @@ vignettes/*.pdf
 *.knit.md
 
 # RMarkdown files
-.Rmd 
+README.Rmd 
 
 # R Environment Variables
 .Renviron
