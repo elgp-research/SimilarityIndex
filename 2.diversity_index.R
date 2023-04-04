@@ -1,8 +1,5 @@
-## ----setup, include=FALSE------------------------------------------------------------------------------------------
-knitr::opts_chunk$set(echo = TRUE)
-
 ## ----sourcing R file for clean data -------------------------------------------------------------------------------
-source("data_clean.R")
+source("1.data_clean.R")
 
 ## ----Simpson's diversity index-------------------------------------------------------------------------------------
 # creating separate dataset to calculate diversity index 
