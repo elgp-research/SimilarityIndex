@@ -73,3 +73,5 @@ similarity_dta <- similarity_dta %>%
 # Step 3. Calculating Similarity Index 
 similarity_dta <- similarity_dta %>% 
   mutate( similarity_index = 1 - RMSE )
+
+
