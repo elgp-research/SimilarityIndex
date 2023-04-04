@@ -40,3 +40,6 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Ignoring large data files
+CBP2019.CB1900CBP-Data.csv
