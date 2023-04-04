@@ -102,3 +102,29 @@ acs_dta <- acs_dta %>%
 ```
 
 ### 3.2 County Business Patterns
+
+``` r
+# removing first row from dataset
+cbp_dta <- cbp_dta[-1,]
+
+# calculating sector size 
+cbp_dta <- cbp_dta %>% 
+  filter(EMPSZES_LABEL == "All establishments") %>%
+  group_by(NAME) %>% 
+  mutate(#estab_size = as.numeric(ESTAB)/as.numeric(ESTAB[1]), # sector size by number of establishments
+         employee_size = as.numeric(EMP)/as.numeric(EMP[1])) %>% # sector size by number of employees
+  select(GEO_ID, NAME, NAICS2017_LABEL, employee_size)
+
+# cleaning GEOID for merging with ACS dataset
+cbp_dta <- cbp_dta %>% 
+  mutate(GEO_ID = str_replace_all(GEO_ID, "0500000US", "")) %>% 
+  rename(GEOID= GEO_ID) %>% 
+  separate(NAME, c("County", "State"), ",") # string cleaning for merging 
+
+# reshaping data to wide for easier merging later on 
+cbp_dta <- cbp_dta %>% 
+  spread(NAICS2017_LABEL, employee_size)
+
+# replacing NAs with zeros
+cbp_dta[is.na(cbp_dta)] <- 0
+```
