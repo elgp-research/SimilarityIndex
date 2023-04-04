@@ -41,7 +41,8 @@ the data sources to create the **Similarity Index**.
 
 - `1.data_clean.R` cleans the raw datasets from the various datasets and
   merges them together in a `master dataset`.
-- `2.diversity_index.R` creates a Simpson’s Diversity Index at the
+- `2.diversity_index.R` creates a [Simpson’s Diversity
+  Index](https://www.statology.org/simpsons-diversity-index/) at the
   county level to create an ethnic heterogeneity map.
 - `3.similarity_index.R` assimilates the master dataset and the
   diversity index to construct the Similarity Index using the Euclidean
