@@ -36,9 +36,69 @@ to construct the similarity index at the county level:
 
 ## 3. Data Analysis
 
+### 3.1 American Community Survey
+
 We used the following code to look up relevant variables from the ACS
 using the tidycensus package
 
 ``` r
-#varlist <- load_variables(year = 2019, dataset = "acs1")
+# varlist <- load_variables(year = 2019, dataset = "acs1")
 ```
+
+``` r
+# creating variable list for acs
+my_vars <- c(
+  total_population = "B01001_001",
+  male_population = "B01001_002",
+  female_population = "B01001_026",
+  
+  white_population = "B01001A_001",
+  black_population = "B01001B_001",
+  native_population = "B01001C_001",
+  asian_population = "B01001D_001",
+  hawaiin_population = "B01001E_001",
+  other_race_population = "B01001F_001",
+  two_race_population = "B01001G_001",
+  hispanic_population = "B01001I_001",
+  
+  median_household_income = "B19013_001",
+  median_family_income = "B19113_001",
+  
+  total_laborforce = "B23025_001",
+  total_in_laborforce = "B23025_002",
+  civilian_laborforce = "B23025_003",
+  employed_civilian_labor = "B23025_004",
+  unemployed_civilian_labor = "B23025_005",
+  
+  enrolled_school = "B14001_002",
+  unenrolled_school = "B14001_010",
+  enrolled_bachelor = "B14001_008",
+  enrolled_graduate = "B14001_009",
+  
+  poverty_pop = "B17001_002",
+  
+  gini_coeff = "B19083_001"
+)
+```
+
+``` r
+# getting data from ACS 5-YEAR survey
+acs_dta <- get_acs(
+  geography = "county",
+  variables = my_vars,
+  year = 2019,
+  survey = "acs5"
+) %>% 
+  select(-moe)
+```
+
+    ## Getting data from the 2015-2019 5-year ACS
+
+``` r
+# reshaping data for easier merging later on
+acs_dta <- acs_dta %>% 
+  spread(variable, estimate) %>% 
+  separate(NAME, c("County", "State"), ",") # string cleaning for merging 
+```
+
+### 3.2 County Business Patterns
