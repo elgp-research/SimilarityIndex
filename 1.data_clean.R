@@ -1,13 +1,8 @@
-## ----setup, include=FALSE------------------------------------------------------------------------------------------
-knitr::opts_chunk$set(echo = TRUE)
-
-
 ## ----libraries, include=FALSE--------------------------------------------------------------------------------------
 library(tidyverse)
 library(tidycensus)
 library(readxl)
 options(scipen = 999)
-
 
 ## ----acs_lookup----------------------------------------------------------------------------------------------------
 # varlist <- load_variables(year = 2019, dataset = "acs1")
@@ -204,8 +199,9 @@ gdp_dta <- gdp_dta %>%
          State = str_replace_all(State, " ", ""),
          State = toupper(State)) %>% 
   select(County, State, gdp_2019)
-
-
+# changing label of New Orleans Parish 
+gdp_dta <- gdp_dta %>% 
+  mutate(County = ifelse(County == "Orleans County", "Orleans Parish", County))
 
 ## ----master_merge--------------------------------------------------------------------------------------------------
 # merging ACS and CBP datasets
