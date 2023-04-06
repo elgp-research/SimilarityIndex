@@ -41,10 +41,14 @@ README.Rmd
 # R Environment Variables
 .Renviron
 
-# Ignoring large data files
+# Large csv files
 CBP2019.CB1900CBP-Data.csv
 Life_Expectancy_CensusTracts_2015_2019.csv
+db_indicators.csv
+db_sectors.csv
 
+# rsconnect
+rsconnect/
 
-# Ignoring .DS_Store files
+# .DS_Store files
 .DS_Store
