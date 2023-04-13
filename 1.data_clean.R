@@ -58,9 +58,15 @@ acs_dta <- acs_dta %>%
   spread(variable, estimate) %>% 
   separate(NAME, c("County", "State"), ",") # string cleaning for merging 
 
-
 ## ----cbp_import, include=FALSE-------------------------------------------------------------------------------------
 cbp_dta <- read_csv(gzfile("Data/CBP2019.CB1900CBP-Data.csv.gz"))
+
+temp_dta <- cbp_dta %>% 
+  filter(NAME == "Philadelphia County, Pennsylvania" | NAME == "Orleans Parish, Louisiana") %>% 
+  select(NAME, NAICS2017_LABEL, ESTAB, EMP ) %>% 
+  gather(ethnicity, count, white_population:hispanic_population) %>% 
+  group_by(County) %>% 
+  mutate(race_prop = count/sum(count) * 100) 
 
 
 ## ----cbp_clean-----------------------------------------------------------------------------------------------------
@@ -258,3 +264,4 @@ master_dta <- master_dta %>%
 # creating population quartiles
 master_dta <- master_dta %>% 
   mutate(population_quartile = ntile(total_population, 4))
+
