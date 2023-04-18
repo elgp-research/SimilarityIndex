@@ -49,5 +49,3 @@ the data sources to create the **Similarity Index**.
   distance where the reference point for similarity is the county of
   Philadelphia, PA.
   
-  
-## 4. This is just a test commit  
