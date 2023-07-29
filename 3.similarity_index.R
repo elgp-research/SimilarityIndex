@@ -74,4 +74,9 @@ similarity_dta <- similarity_dta %>%
 similarity_dta <- similarity_dta %>% 
   mutate( similarity_index = 1 - RMSE )
 
+temp_similarity <- similarity_dta %>% 
+  select(County, State, similarity_index) 
+
+temp_similarity <- temp_similarity %>% 
+  arrange(-similarity_index)
 
