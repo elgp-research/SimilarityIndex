@@ -56,7 +56,7 @@ the data sources to create the **Similarity Index**.
 - I could model how different counties that look similar have increased their gdp, for example, 
 over time after controlling for fixed effects. 
 
-## 5. Future Ideas for Non profit neywork analysis
+## 5. Future Ideas for Non profit Network Analysis
 
 - I want to analyze how non profits across the US are linked with each other
 - Can start with LinkedIn data if possible. Analyze whether non profits follow each other to identify ties
@@ -64,7 +64,7 @@ over time after controlling for fixed effects.
 - Importance of nodes can be identified by number of links of each non profit with other non profits
 - Importance of nodes can also be identified by how far each node is, geographicaly, and is still being followed by other non-profits
 
-## 6, Dashboard samples
+## 6, Dashboard Samples
 
 - Create dashboards in R Shiny abd Power BI 
 
