@@ -64,7 +64,7 @@ over time after controlling for fixed effects.
 - Importance of nodes can be identified by number of links of each non profit with other non profits
 - Importance of nodes can also be identified by how far each node is, geographicaly, and is still being followed by other non-profits
 
-## 6, Dashboard Samples
+## 6. Dashboard Samples
 
 - Create dashboards in R Shiny abd Power BI 
 
