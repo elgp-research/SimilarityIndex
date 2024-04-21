@@ -34,7 +34,14 @@ to construct the similarity index at the county level:
 - Life Expectancy Data
 - Bureau of Labor Statistics (BLS) used to collect GDP data
 
-## 3. Data Analysis
+## 3. Future Ideas
+
+- Want to contrsuct a GIS map of how counties that look similar lie across the country
+- Make the Similarity Index more robust by incorporating regression models with fixed levels 
+- I could model how different counties that look similar have increased their gdp, for example, 
+over time after controlling for fixed effects. 
+
+## 4. Data Analysis
 
 The following files clean and analyze the raw datasets extracted from
 the data sources to create the **Similarity Index**.
