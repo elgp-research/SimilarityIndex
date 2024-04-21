@@ -34,14 +34,7 @@ to construct the similarity index at the county level:
 - Life Expectancy Data
 - Bureau of Labor Statistics (BLS) used to collect GDP data
 
-## 3. Future Ideas
-
-- Want to contrsuct a GIS map of how counties that look similar lie across the country
-- Make the Similarity Index more robust by incorporating regression models with fixed levels 
-- I could model how different counties that look similar have increased their gdp, for example, 
-over time after controlling for fixed effects. 
-
-## 4. Data Analysis
+## 3. Data Analysis
 
 The following files clean and analyze the raw datasets extracted from
 the data sources to create the **Similarity Index**.
@@ -55,4 +48,30 @@ the data sources to create the **Similarity Index**.
   diversity index to construct the Similarity Index using the Euclidean
   distance where the reference point for similarity is the county of
   Philadelphia, PA.
+
+## 4. Future Ideas for Similarity Index
+
+- Want to contrsuct a GIS map of how counties that look similar lie across the country
+- Make the Similarity Index more robust by incorporating regression models with fixed levels 
+- I could model how different counties that look similar have increased their gdp, for example, 
+over time after controlling for fixed effects. 
+
+## 5. Future Ideas for Non profit neywork analysis
+
+- I want to analyze how non profits across the US are linked with each other
+- Can start with LinkedIn data if possible. Analyze whether non profits follow each other to identify ties
+- Strength of ties can be identified via likes and frequency of posts
+- Importance of nodes can be identified by number of links of each non profit with other non profits
+- Importance of nodes can also be identified by how far each node is, geographicaly, and is still being followed by other non-profits
+
+## 6, Dashboard samples
+
+- Create dashboards in R Shiny abd Power BI 
+
+## 7. Growth of minority communities in Nashville
+
+- Figure out how racial communitires have been growing in the Nashville tegion over the last decade 
+- Identify the main reasons for why that is happening and wgat will the future continue to look like
+- Analyze how Nashville is already different from other Southern cities and how it will continue to change in the coming decades by modelling current trends into the future 
+
   
